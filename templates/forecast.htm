@@ -1,0 +1,18 @@
+<div>
+	<a href="#/">Back to Search</a>
+</div>
+Forecast for {{city}}
+<hr/>
+<div>Days:
+	<a href="#/forecast/2" ng-class="{'bg-primary': count === '2'}">2</a> |
+	<a href="#/forecast/5" ng-class="{'bg-primary': count === '5'}">5</a> |
+	<a href="#/forecast/7" ng-class="{'bg-primary': count === '7'}">7</a>
+</div>
+<hr/>
+<div ng-repeat="w in weatherResult.list">
+	<div class="row">
+		<div class="col-md-12">
+			<weather-directive weather-day = 'w' date-format = "MMMM d, y" convert-to-date =  'convertToDate(dt)' convert-to-standard = 'convertCelciusToFahrenheit(dayTemp)'></weather-directive>
+		</div>
+	</div>
+</div>
